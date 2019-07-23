@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Student löschen</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<h1>L&ouml;sche einen Studierenden:</h1>
+	<form th:action="@{/deleteForm}" th:object="${StudentForm}" method="GET" th:method="DELETE">
+		Matrikelnummer: <input type="number" th:field="*{matriculationNo}" />
+		<input type="submit" value="Löschen" />
+		<br />
+	</form>
+	<br />
+	<!-- Check if errorMessage is not null and not empty -->
+	<div th:if="${deleteMessage}" th:utext="${deleteMessage}"
+		style="color: red; font-style: italic;">...</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Willkommen</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<h1>Willkommen</h1>
+	<h2 th:utext="${message}">..!..</h2>
+	<a th:href="@{/listStudents}">Zeige alle Studierenden</a>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Studierendenliste</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<h1>Tabelle aller Studierenden</h1>
+	<a href="addStudent">f&uuml;ge Studierenden hinzu</a>
+	<br />
+	<br />
+	<div>
+		<table border="1">
+			<tr>
+				<th>Matr.Nr.</th>
+				<th>Vorname</th>
+				<th>Nachname</th>
+			</tr>
+			<tr th:each="student : ${students}">
+				<td th:utext="${student.matriculationNo}">...</td>
+				<td th:utext="${student.firstName}">...</td>
+				<td th:utext="${student.lastName}">...</td>
+			</tr>
+		</table>
+	</div>
+	<br />
+	<br />
+	<a href="deleteForm">l&ouml;sche Studierenden</a>
+</body>
+</html>

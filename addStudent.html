@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Student hinzufuegen</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<h1>Erstelle einen Studierenden:</h1>
+	<form th:action="@{/addStudent}" th:object="${studentForm}"
+		method="POST">
+		Matrikelnummer: <input type="text" th:field="*{matriculationNo}" /> <br />
+		Vorname: <input type="text" th:field="*{firstName}" /> <br />
+		Nachname: <input type="text" th:field="*{lastName}" /> <br /> <input
+			type="submit" value="Create" />
+	</form>
+	<br />
+	<!-- Check if errorMessage is not null and not empty -->
+	<div th:if="${errorMessage}" th:utext="${errorMessage}"
+		style="color: red; font-style: italic;">...</div>
+</body>
+</html>
